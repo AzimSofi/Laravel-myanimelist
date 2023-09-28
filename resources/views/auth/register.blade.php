@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ja" data-bs-theme="auto">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Signin Template · Bootstrap v5.3</title>
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+		{{-- <link href="{% static 'auth_app/bootstrap.min.css' %}" rel="stylesheet">
+		<link href="{% static 'auth_app/sign-in.css' %}" rel="stylesheet"> --}}
+
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+
+		<!-- bootstrap -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+	</head>
+	<body>
+        @include('header');
+		<h1 class="mt-2" id="profile_header-3">
+			Login
+		</h1>
+		<div class="mt-3"></div>
+		<main class="d-flex flex-column align-items-center form-signin m-auto">
+			<h1 class="mt-5 mb-5" style="font-size: 30px !important;">ようこそ</h1>
+			<div class="mb-1"></div>
+			<form method="post">
+                {{-- @csrf
+				{% if form.non_field_errors %}
+				<div class="alert alert-danger">
+					{{ form.non_field_errors }}
+				</div>
+				{% endif %}
+
+				<div class="d-flex flex-column align-items-center justify-content-center mt-3">
+
+					<!-- Username Field -->
+					<div class="userinput-box form-group">
+						<label class="grey_text" for="{{ form.username.id_for_label }}">Username</label>
+						<input class="grey_text" type="text" name="username" id="{{ form.username.id_for_label }}" maxlength="50" value="{% if form.username.value %}{{ form.username.value }}{% endif %}">
+						{% if form.username.errors %}
+							<div class="mt-2 alert alert-danger">
+								{{ form.username.errors }}
+							</div>
+						{% endif %}
+					</div>
+
+					<!-- Password Field -->
+					<div class="userinput-box form-group">
+						<div class="d-flex justify-content-between align-items-end">
+							<label class="grey_text" for="{{ form.password.id_for_label }}">Password</label>
+						</div>
+						<input class="grey_text" type="password" name="password" id="{{ form.password.id_for_label }}" maxlength="50">
+						{% if form.password.errors %}
+							<div class="alert alert-danger">
+								{{ form.password.errors }}
+							</div>
+						{% endif %}
+					</div>
+
+					<button class="btn btn-primary py-2 mb-5" type="submit">ログイン</button>
+				</div> --}}
+			</form>
+		</main>
+	</body>
+</html>
+
+<script>
+	function showPassword() {
+		var x = document.getElementById("password");
+		if (x.type === "password") {
+		  x.type = "text";
+		} else {
+		  x.type = "password";
+		}
+	}
+
+	function togglePassword() {
+		let passwordField = document.getElementById('password');
+		let passwordIcon = event.target;
+		if (passwordField.type === "password") {
+			passwordField.type = "text";
+			passwordIcon.classList.remove('fa-eye');
+			passwordIcon.classList.add('fa-eye-slash');
+		} else {
+			passwordField.type = "password";
+			passwordIcon.classList.remove('fa-eye-slash');
+			passwordIcon.classList.add('fa-eye');
+		}
+	}
+
+</script>

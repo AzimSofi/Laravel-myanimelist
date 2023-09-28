@@ -1,0 +1,34 @@
+<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+<header>
+    <div class="mt- mb-2 d-flex justify-content-between align-items-center">
+        <div>
+            <a href="#"><img height="48px" src="https://cdn.myanimelist.net/images/mal-logo-xsmall-white@2x.png?v=1634263200"></a>
+        </div>
+        <div class="grey_text d-flex flex-row">
+            @if ( isset($user->name))
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle grey_text" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <strong>{{ $user?->username }}</strong>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">プロフィール</a></li>
+                        <li><a class="dropdown-item" href="#">設定</a></li>
+                        <li><a class="dropdown-item" href="#">ログアウト</a></li>
+                    </ul>
+                </div>
+            @endif
+            @if (isset($user->picture))
+            <div id="">
+                <img class="align-self-center" width="30px" height="30px" src="{{ $user?->profile_picture }}">
+            </div>
+            @endif
+        </div>
+    </div>
+</header>
+<div class="navbar d-flex justify-content-start">
+    <a href="#" data-bs-toggle="modal" data-bs-target="#addAnimeMangaModal">アニメやマンガを追加</a>
+    <a href="#home">ホーム</a>
+    <a href="#about">アバウト</a>
+    <a href="#services">サービス</a>
+    <a href="#contact">コンタクト</a>
+</div>
